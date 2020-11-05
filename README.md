@@ -1,4 +1,6 @@
 # QtProject
+项目地址来自 github: https://github.com/seejv/QtProject
+
 自定义 qt 控件
 工程：
 1. new branch QtVirtualKeyboard:
