@@ -11,5 +11,8 @@
 添加 qt5 旋转补丁包，以及修复会导致透明失效的问题。（环境 qt5.5.1）,可能由于补丁包是 qt5.4，所以才会导致打了补丁包后无法正常设置透明效果。
 具体需要哪些内容请自行决定。
 
+3. new branch QtPagingToolBar: 
+一个使用 QWidget 开发的分页栏，类似于网页分页栏的效果。
+ ![qt分页栏演示](https://github.com/seejv/QtProject/blob/QtPagingToolBar/pagingtoolbar_show.gif)
 
 
