@@ -1,2 +1,5 @@
 # QtProject
-Custom QtWidget
+单选滑块按钮
+1、背景色、按钮色自由更改
+2、自适应大小更改
+
