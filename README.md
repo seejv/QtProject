@@ -15,4 +15,7 @@
 一个使用 QWidget 开发的分页栏，类似于网页分页栏的效果。
  ![qt分页栏演示](https://github.com/seejv/QtProject/blob/QtPagingToolBar/pagingtoolbar_show.gif)
 
+4. new branch QtSliptBotton: 
+一个使用 QWidget 开发的单选滑块按钮。
+ ![qt分页栏演示](https://github.com/seejv/QtProject/blob/QtSliptBotton/slipt_btn.png)
 
