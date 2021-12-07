@@ -7,6 +7,9 @@
 /*
    功能： 可以擦除，可保存，可恢复画板
    说明： 该画板在 qt5.9.8 下测试通过，目前在 ARM Cortex A7 双核 @1.3GHz 画图尚且流畅
+    有些是没有用到，例如
+
+    offsetPoint_
 
 */
 
@@ -42,8 +45,9 @@ protected:
 //    void resizeEvent(QResizeEvent *e) override;
 
 private:
-    //源图，临时绘制图，完成图
-    QPixmap *pixSrc_{}, *pixCache_{}, *pix_{};
+//background picture,  confirm tmp changed,  tmp changed.
+    // 背景图片， 提交临时变更， 临时绘图区域
+    QPixmap *pixSrc_{},  *pix_{}, *pixCache_{};
     QPoint offsetPoint_{};
     QPoint topLeftPoint_{}, bottomRightPoint_{};//mark udpate area, save the cpu
 
@@ -58,7 +62,6 @@ private:
 
 // 当画板大小与可见区域不一致时候，需要进行位置重定位
     void drawInPix(const QVector<QPoint> points, QPixmap *pixBoard); //在 paintervent 调用，就不 begin 了
-    QVector<QLine> pointToLine(const QVector<QPoint> &points);
 
 private:
     const QRect updateUpdateArea(const QPoint &curPoint);
