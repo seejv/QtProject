@@ -22,3 +22,7 @@
 5. QtDrawingBoard: 
 一个 Qt 画板，支持擦除、恢复，保存，可以用于嵌入式
  ![qt画板演示](https://github.com/seejv/QtProject/blob/master/QtDrawingBoard/drawingboard.gif)
+
+6. QtTimer:
+定时器, linux 不用再找定时器了                                                                                                
+ ![qt定时器演示](https://github.com/seejv/QtProject/blob/master/QtTimer/mytimer.gif)
