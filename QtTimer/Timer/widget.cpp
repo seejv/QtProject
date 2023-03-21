@@ -11,14 +11,31 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    timer_ = new QTimer;
 
-    connect(timer_,&QTimer::timeout, [&](){
+    timer_ = new QTimer;
+    dialog_ = new QDialog;
+
+    auto btn = new QPushButton(dialog_);
+    btn->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    QFont font = btn->font();
+    font.setPixelSize(50);
+    btn->setFont(font);
+
+    QHBoxLayout *lay = new QHBoxLayout;
+    lay->addWidget(btn);
+
+    dialog_->setLayout(lay);
+
+
+    connect(btn, &QPushButton::clicked, dialog_, &QDialog::hide);
+
+
+    connect(timer_,&QTimer::timeout, [=](){
         if (--count_ <= 0) {
             QString taskname = ui->taskname->text();
-            QMessageBox msgBox;
-            msgBox.setText(QString("定时任务 \n %1 \n 已经结束").arg(taskname));
-            msgBox.exec();
+            btn->setText(taskname);
+
+            dialog_->showFullScreen();
             on_stop_clicked();
             return;
         }

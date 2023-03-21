@@ -18,6 +18,7 @@ class Widget : public QWidget
 
     QTimer *timer_{};
     int count_{};
+    QDialog *dialog_{};
 
 public:
     Widget(QWidget *parent = nullptr);
