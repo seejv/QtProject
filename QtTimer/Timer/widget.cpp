@@ -1,6 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 
+#include <QCloseEvent>
 #include <QMessageBox>
 #include <QTimer>
 
@@ -10,6 +11,7 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    this->setWindowTitle("倒计时");
 
 
     timer_ = new QTimer;
@@ -52,6 +54,12 @@ Widget::Widget(QWidget *parent)
 Widget::~Widget()
 {
     delete ui;
+}
+
+void Widget::closeEvent(QCloseEvent *event)
+{
+    event->ignore();
+    this->hide();
 }
 
 void Widget::on_start_clicked()
