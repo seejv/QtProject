@@ -13,9 +13,11 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("倒计时");
 
+    this->setWindowFlags(Qt::WindowStaysOnTopHint);
 
-    timer_ = new QTimer;
-    dialog_ = new QDialog;
+
+    timer_ = new QTimer(this);
+    dialog_ = new QDialog(this);
 
     auto btn = new QPushButton(dialog_);
     btn->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
